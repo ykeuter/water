@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     float score = 0;
     float startTime = 10;
     float timeLeft;
-    float bound = 30;
+    float bound = 50;
     int maxBombs = 10;
     int numBombs = 0;
     public bool isGameActive = false;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed = 25;
-    [SerializeField] float speed = 30;
+    [SerializeField] float rotationSpeed = 75;
+    [SerializeField] float speed = 25;
     GameManager gameManager;
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Destroy(other);
+            Destroy(other.gameObject);
             gameManager.Powerup();
         }
     }
