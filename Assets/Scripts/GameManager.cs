@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     float score = 0;
     float startTime = 10;
     float timeLeft;
-    float bound = 50;
+    float width = 50;
+    float height = 25;
     int maxBombs = 10;
     int numBombs = 0;
     public bool isGameActive = false;
@@ -81,9 +82,9 @@ public class GameManager : MonoBehaviour
 
     Vector3 RandomSpawnPos()
     {
-        float x = Random.Range(0, bound);
-        float y = Random.Range(0, bound);
-        float z = Random.Range(0, bound);
+        float x = Random.Range(-width / 2, width / 2);
+        float y = Random.Range(0, height);
+        float z = Random.Range(0, width);
         return new Vector3(x, y, z);
     }
 }

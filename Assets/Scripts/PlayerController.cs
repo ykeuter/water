@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float rotationSpeed = 75;
+    [SerializeField] float verticalSpeed = 25;
     [SerializeField] float speed = 25;
     GameManager gameManager;
 
@@ -20,7 +21,8 @@ public class PlayerController : MonoBehaviour
         if (gameManager.isGameActive)
         {
             transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed);
-            transform.Rotate(Vector3.right, Input.GetAxis("Vertical") * Time.deltaTime * rotationSpeed);
+
+            transform.position += transform.up * Input.GetAxis("Vertical") * Time.deltaTime * verticalSpeed;
 
             if (Input.GetKey(KeyCode.Space))
             {
